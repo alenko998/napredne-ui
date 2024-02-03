@@ -27,6 +27,9 @@ export class LoginComponent implements OnInit{
         this.userAuthService.setRole(response.role);
         this.userAuthService.setToken(response.token);
         this.userAuthService.setUserId(response.id);
+        this.userAuthService.id = response.id;
+        console.log(" id from login: " + this.userAuthService.id);
+        
         if(response.role === "Admin"){
           this.router.navigate(["/admin"]);
         } else {

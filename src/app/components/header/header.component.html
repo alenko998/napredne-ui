@@ -34,9 +34,11 @@
               <a routerLinkActive="active" routerLink="/home" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
               <a routerLinkActive="active" *ngIf="this.matchingRoles('Admin')" routerLink="/admin" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Admin route</a>
               <a routerLinkActive="active" *ngIf="this.matchingRoles('Admin')" routerLink="/users" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Users</a>
+              <a routerLinkActive="active" *ngIf="this.matchingRoles('Admin')" routerLink="/admin-houses" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Houses</a>
               <a routerLinkActive="active" *ngIf="this.matchingRoles('User')" routerLink="/user" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">User route</a>
               <a routerLinkActive="active" *ngIf="this.matchingRoles('User')" routerLink="/available-houses" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Houses</a>
-              <a routerLinkActive="active" *ngIf="this.matchingRoles('User')" [routerLink]="['/my-houses', id]" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">My House</a>
+              <a routerLinkActive="active" *ngIf="this.matchingRoles('User')" routerLink="/single" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">My house</a>
+              <!-- <a routerLinkActive="active" *ngIf="this.matchingRoles('User')" [routerLink]="['/my-houses', id]" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">My House</a> -->
             </div>
           </div>
         </div>

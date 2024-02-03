@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit{
-
+  
   role?:string;
   id:any;
   test = this.matchingRoles('User');
@@ -22,7 +22,8 @@ export class HeaderComponent implements OnInit{
     
     if(this.userAuthService.getUserId() != null){
       this.id = this.userAuthService.getUserId();
-      console.log(this.id);
+      console.log(this.userAuthService.getUserId());
+      
     }
 
 

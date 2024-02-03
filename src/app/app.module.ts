@@ -18,6 +18,8 @@ import { UserService } from './services/user.service';
 import { UsersComponent } from './pages/users/users.component';
 import { AvailableHousesComponent } from './pages/available-houses/available-houses.component';
 import { MyHouseComponent } from './pages/my-house/my-house.component';
+import { SingleComponent } from './pages/single/single.component';
+import { AdminHousesComponent } from './pages/admin-houses/admin-houses.component';
 
 
 
@@ -34,7 +36,9 @@ import { MyHouseComponent } from './pages/my-house/my-house.component';
     ForbiddenComponent,
     UsersComponent,
     AvailableHousesComponent,
-    MyHouseComponent
+    MyHouseComponent,
+    SingleComponent,
+    AdminHousesComponent
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,8 @@ import { UserAuthService } from './user-auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class MembersService {
+export class HouseService {
+
   URL = 'https://localhost:7297/api/';
 
 
@@ -14,19 +15,24 @@ export class MembersService {
     private userAuthService:UserAuthService
     ) { }
 
-
-    getAllUsers(){
-      return this.httpClient.get(this.URL + 'User',{
+    getAllHouses(){
+      return this.httpClient.get(this.URL + 'House',{
         headers: this.createAuthorizationHeader(),
       });
     }
 
-    blockUser(id:any){
-      return this.httpClient.put(this.URL + `User/blocked-status/${id}`, {
+    getSingleHouse(userId:any){
+      return this.httpClient.get(this.URL + `House/signle-house/${userId}`,{
+        headers: this.createAuthorizationHeader(),
+      });
+      
+    }
+
+    blockHouse(id:any){
+      return this.httpClient.put(this.URL + `House/blocked-status/${id}`, {
         headers: this.createAuthorizationHeader(),
       });
     }
-
 
 
     private createAuthorizationHeader(): HttpHeaders{

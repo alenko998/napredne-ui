@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { HouseService } from 'src/app/services/house.service';
 
 @Component({
-  selector: 'app-my-house',
-  templateUrl: './my-house.component.html',
-  styleUrls: ['./my-house.component.css']
+  selector: 'app-admin-houses',
+  templateUrl: './admin-houses.component.html',
+  styleUrls: ['./admin-houses.component.css']
 })
-export class MyHouseComponent implements OnInit{
+export class AdminHousesComponent implements OnInit{
+
   houses: any = [];
   constructor(
     private houseService:HouseService,
@@ -24,6 +25,18 @@ export class MyHouseComponent implements OnInit{
       },
       (error)=>{
         console.log(error);
+      }
+    )
+  }
+
+  blockHouse(id:any){
+    this.houseService.blockHouse(id).subscribe(
+      (response) => {
+        this.getAllHouses();
+      },
+      (error) => {
+        console.log(error);
+        
       }
     )
   }

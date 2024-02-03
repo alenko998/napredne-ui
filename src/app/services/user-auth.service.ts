@@ -4,7 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserAuthService {
-
+  id:any;
+  
   constructor() { }
 
   public setRole(role: any){
