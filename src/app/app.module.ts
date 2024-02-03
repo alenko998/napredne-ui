@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { UserService } from './services/user.service';
+import { UsersComponent } from './pages/users/users.component';
 
 
 
@@ -28,7 +29,8 @@ import { UserService } from './services/user.service';
     UserComponent,
     LoginComponent,
     HeaderComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

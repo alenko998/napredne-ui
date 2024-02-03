@@ -22,7 +22,7 @@ export class NoAuthGuard implements CanActivate {
     }
 
     // Token exists, redirect to another route (e.g., home)
-    this.router.navigate(['/home']);
+    this.router.navigate(["/home"]);
     return false;
   }
 }

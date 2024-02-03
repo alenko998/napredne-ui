@@ -7,11 +7,13 @@ import { LoginComponent } from './pages/login/login.component';
 import { ForbiddenComponent } from './pages/forbidden/forbidden.component';
 import { AuthGuard } from './auth/auth.guard';
 import { NoAuthGuard } from './auth/no-auth.guard';
+import { UsersComponent } from './pages/users/users.component';
 
 const routes: Routes = [
   {path: 'home' , component: HomeComponent},
   {path: 'user' , component: UserComponent,canActivate:[AuthGuard],data:{roles:'User'}},
   {path: 'admin' , component: AdminComponent,canActivate:[AuthGuard],data:{roles:'Admin'}},
+  {path: 'users' , component: UsersComponent,canActivate:[AuthGuard],data:{roles:'Admin'}},
   {path: 'login' , component: LoginComponent,canActivate:[NoAuthGuard]},
   {path: 'forbidden' , component: ForbiddenComponent},
 ];

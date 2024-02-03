@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" routerLink="/home">Home Swap App</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,6 +12,9 @@
           <li *ngIf="this.matchingRoles('Admin')" class="nav-item">
             <a  class="nav-link active" aria-current="page" routerLink="/admin">Admin route</a>
           </li>
+          <li *ngIf="this.matchingRoles('Admin')" class="nav-item">
+            <a  class="nav-link active" aria-current="page" routerLink="/users">Users</a>
+          </li>
           <li *ngIf="this.matchingRoles('User')" class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="/user">User route</a>
           </li>
@@ -20,4 +23,27 @@
         <button *ngIf="isLoggedIn()" type="button" class="btn btn-danger" (click) = "logout()">Logout</button>
       </div>
     </div>
+  </nav> -->
+
+  <nav class="bg-gray-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="flex items-center">
+          <div class="hidden sm:ml-6 sm:block">
+            <div class="flex space-x-4">
+              <a routerLinkActive="active" routerLink="/home" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
+              <a routerLinkActive="active" routerLink="/admin" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Admin route</a>
+              <a routerLinkActive="active" routerLink="/users" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Users</a>
+              <a routerLinkActive="active" *ngIf="this.matchingRoles('User')" routerLink="/user" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">User route</a>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <button *ngIf="!isLoggedIn()" type="button" class="btn btn-success ml-auto" routerLink="/login">Login</button>
+          <button *ngIf="isLoggedIn()" type="button" class="btn btn-danger ml-4" (click)="logout()">Logout</button>
+        </div>
+      </div>
+    </div>
   </nav>
+  
+  
