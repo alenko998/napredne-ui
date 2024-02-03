@@ -8,10 +8,14 @@ import { ForbiddenComponent } from './pages/forbidden/forbidden.component';
 import { AuthGuard } from './auth/auth.guard';
 import { NoAuthGuard } from './auth/no-auth.guard';
 import { UsersComponent } from './pages/users/users.component';
+import { AvailableHousesComponent } from './pages/available-houses/available-houses.component';
+import { MyHouseComponent } from './pages/my-house/my-house.component';
 
 const routes: Routes = [
   {path: 'home' , component: HomeComponent},
   {path: 'user' , component: UserComponent,canActivate:[AuthGuard],data:{roles:'User'}},
+  {path: 'available-houses' , component: AvailableHousesComponent,canActivate:[AuthGuard],data:{roles:'User'}},
+  {path: 'my-houses/:id' , component: MyHouseComponent,canActivate:[AuthGuard],data:{roles:'User'}},
   {path: 'admin' , component: AdminComponent,canActivate:[AuthGuard],data:{roles:'Admin'}},
   {path: 'users' , component: UsersComponent,canActivate:[AuthGuard],data:{roles:'Admin'}},
   {path: 'login' , component: LoginComponent,canActivate:[NoAuthGuard]},

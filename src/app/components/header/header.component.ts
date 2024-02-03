@@ -11,6 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 export class HeaderComponent implements OnInit{
 
   role?:string;
+  id:any;
   test = this.matchingRoles('User');
   constructor(
     private userAuthService:UserAuthService,
@@ -19,6 +20,12 @@ export class HeaderComponent implements OnInit{
   ){}
   ngOnInit(): void {
     
+    if(this.userAuthService.getUserId() != null){
+      this.id = this.userAuthService.getUserId();
+      console.log(this.id);
+    }
+
+
     
   }
 

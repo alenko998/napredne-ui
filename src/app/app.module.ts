@@ -16,6 +16,8 @@ import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { UserService } from './services/user.service';
 import { UsersComponent } from './pages/users/users.component';
+import { AvailableHousesComponent } from './pages/available-houses/available-houses.component';
+import { MyHouseComponent } from './pages/my-house/my-house.component';
 
 
 
@@ -30,7 +32,9 @@ import { UsersComponent } from './pages/users/users.component';
     LoginComponent,
     HeaderComponent,
     ForbiddenComponent,
-    UsersComponent
+    UsersComponent,
+    AvailableHousesComponent,
+    MyHouseComponent
   ],
   imports: [
     BrowserModule,
