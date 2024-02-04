@@ -19,6 +19,10 @@ export class UserService {
     return this.httpClient.post(this.URL + 'Auth/login', loginData,{headers:this.reaquestHeader});
   }
 
+  public register(registerData: any){
+    return this.httpClient.post(this.URL + 'Auth/register', registerData,{headers:this.reaquestHeader});
+  }
+
   public forUser(){
     return this.httpClient.get(this.URL + 'TestRoles/user-route',{
       headers: this.createAuthorizationHeader(),

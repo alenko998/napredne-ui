@@ -21,6 +21,9 @@ import { MyHouseComponent } from './pages/my-house/my-house.component';
 import { SingleComponent } from './pages/single/single.component';
 import { AdminHousesComponent } from './pages/admin-houses/admin-houses.component';
 import { OffersDoneComponent } from './pages/offers-done/offers-done.component';
+import { UserOffersComponent } from './pages/user-offers/user-offers.component';
+import { SingleHousePageComponent } from './pages/single-house-page/single-house-page.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 
 
@@ -40,7 +43,10 @@ import { OffersDoneComponent } from './pages/offers-done/offers-done.component';
     MyHouseComponent,
     SingleComponent,
     AdminHousesComponent,
-    OffersDoneComponent
+    OffersDoneComponent,
+    UserOffersComponent,
+    SingleHousePageComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

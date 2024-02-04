@@ -13,18 +13,24 @@ import { MyHouseComponent } from './pages/my-house/my-house.component';
 import { SingleComponent } from './pages/single/single.component';
 import { AdminHousesComponent } from './pages/admin-houses/admin-houses.component';
 import { OffersDoneComponent } from './pages/offers-done/offers-done.component';
+import { UserOffersComponent } from './pages/user-offers/user-offers.component';
+import { SingleHousePageComponent } from './pages/single-house-page/single-house-page.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 const routes: Routes = [
   {path: 'home' , component: HomeComponent},
   {path: 'user' , component: UserComponent,canActivate:[AuthGuard],data:{roles:'User'}},
   {path: 'available-houses' , component: AvailableHousesComponent,canActivate:[AuthGuard],data:{roles:'User'}},
-  {path: 'my-houses/:id' , component: MyHouseComponent},
+  {path: 'single-house-page/:id' , component: SingleHousePageComponent,canActivate:[AuthGuard],data:{roles:'User'}},
+  {path: 'my-house/:id' , component: MyHouseComponent},
   {path: 'single' , component: SingleComponent,canActivate:[AuthGuard],data:{roles:'User'}},
+  {path: 'user-offers/:houseId' , component: UserOffersComponent,canActivate:[AuthGuard],data:{roles:'User'}},
   {path: 'admin' , component: AdminComponent,canActivate:[AuthGuard],data:{roles:'Admin'}},
   {path: 'users' , component: UsersComponent,canActivate:[AuthGuard],data:{roles:'Admin'}},
   {path: 'admin-houses' , component: AdminHousesComponent,canActivate:[AuthGuard],data:{roles:'Admin'}},
   {path: 'offers-done' , component: OffersDoneComponent,canActivate:[AuthGuard],data:{roles:'Admin'}},
   {path: 'login' , component: LoginComponent,canActivate:[NoAuthGuard]},
+  {path: 'register' , component: RegisterComponent,canActivate:[NoAuthGuard]},
   {path: 'forbidden' , component: ForbiddenComponent},
 ];
 

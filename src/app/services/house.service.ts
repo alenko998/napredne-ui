@@ -25,8 +25,13 @@ export class HouseService {
     getSingleHouse(userId:any){
       return this.httpClient.get(this.URL + `House/signle-house/${userId}`,{
         headers: this.createAuthorizationHeader(),
-      });
-      
+      });  
+    }
+
+    getHouseById(id:any){
+      return this.httpClient.get(this.URL + `House/signle-house-by-id/${id}`,{
+        headers: this.createAuthorizationHeader(),
+      });  
     }
 
     blockHouse(id:any){

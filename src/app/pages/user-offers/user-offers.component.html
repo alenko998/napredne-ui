@@ -1,0 +1,20 @@
+<h1 class="text mt-20 mb-2 text-3xl">Offers</h1>
+<div class="offers">
+  <div class="overflow-hidden bg-white shadow sm:rounded-md w-50">
+    <ul role="list" class="divide-y divide-gray-200">
+      <div *ngFor="let offer of offers" class="flex flex-col mb-2">
+        <li class="px-4 py-4 sm:px-6 text-center">
+          <p>
+            <a [routerLink]="['/single-house-page', offer.buyerId]">New offer!</a>
+          </p>
+          <p *ngIf="offer.payment.length < 2">Additional payment: none!</p>
+          <p *ngIf="offer.payment.length > 2">Additional payment: {{offer.payment}}!</p>
+        </li>
+        <div class="self-center">
+          <button class="btn btn-primary mr-5">Accept</button>
+          <button class="btn btn-danger">Reject</button>
+        </div>
+      </div>
+    </ul>
+  </div>
+</div>

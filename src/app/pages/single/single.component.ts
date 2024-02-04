@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HouseService } from 'src/app/services/house.service';
+import { OfferService } from 'src/app/services/offer.service';
 import { UserAuthService } from 'src/app/services/user-auth.service';
 
 @Component({
@@ -14,14 +15,17 @@ export class SingleComponent implements OnInit{
   houses:any = [];
   myHouse:any;
   isModalOpen = false;
+
   constructor(
     private userAuthService: UserAuthService,
     private houseService: HouseService,
+    private offerService: OfferService,
     private router : Router
   ){}
   ngOnInit(): void {
     this.userId = this.userAuthService.getUserId();
     this.getSingleHouse();
+    this.getOffersByHouseId();
   }
 
   addHouse(houseForm:NgForm){    
@@ -50,7 +54,10 @@ export class SingleComponent implements OnInit{
     )
   }
 
-
+  getOffersByHouseId(){
+    console.log("op");
+    
+  }
 
   deleteHouse(id:any){
     this.houseService.deleteHouse(id).subscribe(
