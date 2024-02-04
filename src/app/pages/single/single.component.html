@@ -1,4 +1,8 @@
-<div class="max-w-2xl mx-auto bg-white rounded-md overflow-hidden shadow-md mt-5">
+
+
+
+
+<div *ngIf="myHouse" class="max-w-2xl mx-auto bg-white rounded-md overflow-hidden shadow-md mt-5">
     <img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlc3xlbnwwfHwwfHx8MA%3D%3D" alt="Your Home Image" class="w-full h-64 object-cover object-center">
     <div class="p-4">
       <div class="text-2xl font-semibold text-gray-800">My Home Details</div>
@@ -22,6 +26,109 @@
       </div>
     </div>
   </div>
+
+  
+
+
+
+
+  <div *ngIf="myHouse" class="max-w-2xl mx-auto bg-white rounded-md overflow-hidden shadow-md mt-5">
+    <div class="p-4">
+        <div class="text-2xl font-semibold text-gray-800">Home pictures</div>
+        <button class="btn btn-primary mt-2">Add picture</button>
+        <div class="mt-2 text-gray-600">
+            <!-- Details... -->
+
+            <!-- Image Gallery -->
+            <div class="mt-4 grid grid-cols-2 gap-4">
+                <img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlc3xlbnwwfHwwfHx8MA%3D%3D" alt="House Image 1" class="w-full h-24 object-cover rounded-md">
+                <img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlc3xlbnwwfHwwfHx8MA%3D%3D" alt="House Image 2" class="w-full h-24 object-cover rounded-md">
+                <img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlc3xlbnwwfHwwfHx8MA%3D%3D" alt="House Image 3" class="w-full h-24 object-cover rounded-md">
+                <img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlc3xlbnwwfHwwfHx8MA%3D%3D" alt="House Image 3" class="w-full h-24 object-cover rounded-md">
+                <img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlc3xlbnwwfHwwfHx8MA%3D%3D" alt="House Image 3" class="w-full h-24 object-cover rounded-md">
+                <img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlc3xlbnwwfHwwfHx8MA%3D%3D" alt="House Image 3" class="w-full h-24 object-cover rounded-md">
+                <!-- Add more images as needed -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="!myHouse" class="max-w-md mx-auto bg-white rounded-md overflow-hidden shadow-md mt-5 p-4 flex flex-col items-center">
+  <p class="text-lg font-semibold text-gray-800 mb-4">No house in database</p>
+  <button (click)="openModal()" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">
+    Add house
+  </button>
+  <div *ngIf="isModalOpen" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+    <div class="bg-white p-6 rounded-md w-96">
+
+      
+
+      <div class="container mt-5">
+        <div class="card" style="padding: 20px">
+            <form #houseForm="ngForm" (ngSubmit)="addHouse(houseForm)">
+                <select 
+                required
+                ngModel
+                name="type"
+                id="type"
+                class="form-control mb-3"
+                >
+                  <option value="" disabled>Select a Type</option>
+                  <option  value="house">House</option>
+                  <option  value="apartment">Apartment</option>
+                </select>
+                <select 
+                required
+                ngModel
+                name="garage"
+                id="garage"
+                class="form-control mb-3"
+                >
+                  <option value="" disabled>Garage</option>
+                  <option  value="yes">Yes</option>
+                  <option  value="no">No</option>
+                </select>
+                <input 
+                required
+                type="number"
+                ngModel
+                name="rooms"
+                id="rooms"
+                placeholder="Enter number of rooms"
+                class="form-control mb-3"
+                >             
+                <input 
+                required
+                type="number"
+                ngModel
+                name="area"
+                id="area"
+                placeholder="Area of your property"
+                class="form-control mb-3"
+                >             
+                <input 
+                type="submit" 
+                value="Add"
+                class="btn btn-outline-primary form-control rounded-0"
+                [disabled]="!houseForm.valid"
+                >
+            </form>
+        </div>
+    </div>
+
+
+
+      <button (click)="closeModal()" class="bg-blue-500 text-white px-4 py-2 rounded-md mt-4">Close</button>
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+
 
 
   

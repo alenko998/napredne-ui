@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserAuthService } from './user-auth.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,12 @@ export class HouseService {
 
     blockHouse(id:any){
       return this.httpClient.put(this.URL + `House/blocked-status/${id}`, {
+        headers: this.createAuthorizationHeader(),
+      });
+    }
+
+    addHouse(houseDto:any){
+      return this.httpClient.post(this.URL + 'House',houseDto,{
         headers: this.createAuthorizationHeader(),
       });
     }

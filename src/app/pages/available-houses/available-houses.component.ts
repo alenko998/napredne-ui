@@ -8,6 +8,7 @@ import { HouseService } from 'src/app/services/house.service';
 })
 export class AvailableHousesComponent implements OnInit{
   houses: any = [];
+  availableHouses: any = [];
   constructor(
     private houseService:HouseService,
   ){}
@@ -21,6 +22,7 @@ export class AvailableHousesComponent implements OnInit{
       (response)=>{
         this.houses = response;
         console.log(this.houses);
+        this.availableHouses = this.houses.filter((house: { isBlocked: any; isSwapped: any; }) => !house.isBlocked && !house.isSwapped); 
       },
       (error)=>{
         console.log(error);

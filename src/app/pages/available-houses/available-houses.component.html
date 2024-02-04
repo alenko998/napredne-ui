@@ -3,7 +3,7 @@
 
   <div class="grid grid-cols-6 sm:grid-cols-2 md:grid-cols-2 gap-4 mx-60 mt-5 mb-5">
     <!-- First Card -->
-    <div *ngFor="let house of houses" class="max-w-md  bg-white rounded-md overflow-hidden shadow-md">
+    <div *ngFor="let house of availableHouses" class="max-w-md  bg-white rounded-md overflow-hidden shadow-md">
         <div [routerLink]="['/my-houses', house.id]" class="mt-5 max-w-md mx-auto bg-white rounded-md overflow-hidden shadow-md">
             <img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlc3xlbnwwfHwwfHx8MA%3D%3D" alt="Property Image" class="w-full h-48 object-cover object-center">
             <div class="p-4">
