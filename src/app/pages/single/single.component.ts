@@ -49,6 +49,20 @@ export class SingleComponent implements OnInit{
       }
     )
   }
+
+
+
+  deleteHouse(id:any){
+    this.houseService.deleteHouse(id).subscribe(
+      (response)=>{
+        this.myHouse = null;
+      },
+      (error) => {
+        console.log(error);
+        
+      }
+    )
+  }
   
 
 

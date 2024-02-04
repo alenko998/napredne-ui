@@ -35,6 +35,10 @@ export class HouseService {
       });
     }
 
+    deleteHouse(id:any){
+      return this.httpClient.delete(this.URL + `House/delete/${id}`);
+    }
+
     addHouse(houseDto:any){
       return this.httpClient.post(this.URL + 'House',houseDto,{
         headers: this.createAuthorizationHeader(),

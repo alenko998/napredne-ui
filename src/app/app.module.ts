@@ -20,6 +20,7 @@ import { AvailableHousesComponent } from './pages/available-houses/available-hou
 import { MyHouseComponent } from './pages/my-house/my-house.component';
 import { SingleComponent } from './pages/single/single.component';
 import { AdminHousesComponent } from './pages/admin-houses/admin-houses.component';
+import { OffersDoneComponent } from './pages/offers-done/offers-done.component';
 
 
 
@@ -38,7 +39,8 @@ import { AdminHousesComponent } from './pages/admin-houses/admin-houses.componen
     AvailableHousesComponent,
     MyHouseComponent,
     SingleComponent,
-    AdminHousesComponent
+    AdminHousesComponent,
+    OffersDoneComponent
   ],
   imports: [
     BrowserModule,
