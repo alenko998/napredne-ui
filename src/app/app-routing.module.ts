@@ -16,6 +16,8 @@ import { OffersDoneComponent } from './pages/offers-done/offers-done.component';
 import { UserOffersComponent } from './pages/user-offers/user-offers.component';
 import { SingleHousePageComponent } from './pages/single-house-page/single-house-page.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { ShowFirstComponent } from './pages/show-first/show-first.component';
+import { ShowSecondComponent } from './pages/show-second/show-second.component';
 
 const routes: Routes = [
   {path: 'home' , component: HomeComponent},
@@ -27,6 +29,8 @@ const routes: Routes = [
   {path: 'user-offers/:houseId' , component: UserOffersComponent,canActivate:[AuthGuard],data:{roles:'User'}},
   {path: 'admin' , component: AdminComponent,canActivate:[AuthGuard],data:{roles:'Admin'}},
   {path: 'users' , component: UsersComponent,canActivate:[AuthGuard],data:{roles:'Admin'}},
+  {path: 'show-first/:id' , component: ShowFirstComponent,canActivate:[AuthGuard],data:{roles:'Admin'}},
+  {path: 'show-second/:id' , component: ShowSecondComponent,canActivate:[AuthGuard],data:{roles:'Admin'}},
   {path: 'admin-houses' , component: AdminHousesComponent,canActivate:[AuthGuard],data:{roles:'Admin'}},
   {path: 'offers-done' , component: OffersDoneComponent,canActivate:[AuthGuard],data:{roles:'Admin'}},
   {path: 'login' , component: LoginComponent,canActivate:[NoAuthGuard]},

@@ -21,6 +21,12 @@ export class OfferService {
       });
     }
 
+    getOffers(){
+      return this.httpClient.get(this.URL + 'Offer',{
+        headers: this.createAuthorizationHeader()
+      })
+    }
+
     getOffersByHouseId(id:any){
       return this.httpClient.get(this.URL + `Offer/byHouseId/${id}`,{
         headers: this.createAuthorizationHeader(),

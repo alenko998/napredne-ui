@@ -24,6 +24,8 @@ import { OffersDoneComponent } from './pages/offers-done/offers-done.component';
 import { UserOffersComponent } from './pages/user-offers/user-offers.component';
 import { SingleHousePageComponent } from './pages/single-house-page/single-house-page.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { ShowFirstComponent } from './pages/show-first/show-first.component';
+import { ShowSecondComponent } from './pages/show-second/show-second.component';
 
 
 
@@ -46,7 +48,9 @@ import { RegisterComponent } from './pages/register/register.component';
     OffersDoneComponent,
     UserOffersComponent,
     SingleHousePageComponent,
-    RegisterComponent
+    RegisterComponent,
+    ShowFirstComponent,
+    ShowSecondComponent
   ],
   imports: [
     BrowserModule,
