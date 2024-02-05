@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-
+  errorMessage:any = null;
 
   constructor (
     private userService: UserService,
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit{
       },
       (error)=>{
         console.log(error);
-        
+        this.errorMessage = error.error;
       }
     );
   }

@@ -10,6 +10,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit{
+  errorMessage:any = null;
   constructor (
     private userService: UserService,
     private userAuthService:UserAuthService,
@@ -24,12 +25,11 @@ export class RegisterComponent implements OnInit{
     
     this.userService.register(registerForm.value).subscribe(
       (response)=>{
-         this.router.navigate(['/home']);
-      
+        this.router.navigate(['/home'])
       },
       (error)=>{
-        console.log(error);
-        
+        console.log(error.error);
+        this.errorMessage = error.error
       }
     );
   }
