@@ -50,6 +50,18 @@ export class HouseService {
       });
     }
 
+    swappMyHouse(houseId:any){
+      return this.httpClient.put(this.URL + `House/swapped-status/${houseId}`, {
+        headers: this.createAuthorizationHeader()
+      })
+    }
+
+    swapBuyersHouse(userId:any){
+      return this.httpClient.put(this.URL + `House/swapped-status-by-userId/${userId}`, {
+        headers: this.createAuthorizationHeader()
+      })
+    }
+
 
     private createAuthorizationHeader(): HttpHeaders{
       return new HttpHeaders().set(

@@ -11,8 +11,8 @@
           <p *ngIf="offer.payment.length > 2">Additional payment: {{offer.payment}}!</p>
         </li>
         <div class="self-center">
-          <button class="btn btn-primary mr-5">Accept</button>
-          <button class="btn btn-danger">Reject</button>
+          <button (click)="acceptOffer(offer.id,offer.buyerId,this.houseId)" class="btn btn-primary mr-5">Accept</button>
+          <button (click)="deleteOffer(offer.id)" class="btn btn-danger">Reject</button>
         </div>
       </div>
     </ul>
