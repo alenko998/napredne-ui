@@ -1,5 +1,11 @@
-<h1 class="text mt-20 mb-2 text-3xl">Offers</h1>
-<div class="offers">
+
+<div *ngIf="offers.length < 1" class="container mt-5">
+  <div class="card text-center" style="padding: 20px; color: red;">
+      <h1>No offers here</h1>
+  </div>
+</div>
+
+<div *ngIf="offers.length >= 1" class="offers mt-5">
   <div class="overflow-hidden bg-white shadow sm:rounded-md w-50">
     <ul role="list" class="divide-y divide-gray-200">
       <div *ngFor="let offer of offers" class="flex flex-col mb-2">

@@ -1,7 +1,11 @@
 
+<div *ngIf="availableHouses.length < 1" class="container mt-5">
+  <div class="card text-center" style="padding: 20px; color: red;">
+      <h1>No houses here</h1>
+  </div>
+</div>
 
-
-  <div class="grid grid-cols-6 sm:grid-cols-2 md:grid-cols-2 gap-4 mx-60 mt-5 mb-5">
+  <div *ngIf="availableHouses.length >= 1" class="grid grid-cols-6 sm:grid-cols-2 md:grid-cols-2 gap-4 mx-60 mt-5 mb-5">
     <!-- First Card -->
     <div *ngFor="let house of availableHouses" class="max-w-md  bg-white rounded-md overflow-hidden shadow-md">
         <div [routerLink]="['/my-house', house.id]" class="mt-5 max-w-md mx-auto bg-white rounded-md overflow-hidden shadow-md">
