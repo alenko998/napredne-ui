@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HouseService } from 'src/app/services/house.service';
+import { ImageService } from 'src/app/services/image.service';
 import { OfferService } from 'src/app/services/offer.service';
 import { UserAuthService } from 'src/app/services/user-auth.service';
 
@@ -15,17 +16,42 @@ export class SingleComponent implements OnInit{
   houses:any = [];
   myHouse:any;
   isModalOpen = false;
+  selectedFile: any;
+  images:any;
+  houseId:any;
 
   constructor(
     private userAuthService: UserAuthService,
     private houseService: HouseService,
     private offerService: OfferService,
+    private imageService: ImageService,
     private router : Router
   ){}
   ngOnInit(): void {
     this.userId = this.userAuthService.getUserId();
     this.getSingleHouse();
     this.getOffersByHouseId();
+    this.getImagesByHouseId();
+  }
+
+  getImagesByHouseId(){
+      this.imageService.getImageByHouseId(2).subscribe(
+      (response)=>{
+        this.images = response;
+        console.log(this.images);
+        
+      },
+      (error)=>{
+        console.log(error);
+        
+      }
+    )
+  }
+
+ 
+
+  onFileChanged(event: any) {
+    this.selectedFile = event.target.files[0];
   }
 
   addHouse(houseForm:NgForm){    
@@ -44,7 +70,10 @@ export class SingleComponent implements OnInit{
     this.houseService.getSingleHouse(this.userId).subscribe(
       (response) => {
         this.myHouse = response;
+        this.houseId = this.myHouse.id;
         console.log(this.myHouse);
+        
+        console.log(this.houseId);
         
       },
       (error) => {

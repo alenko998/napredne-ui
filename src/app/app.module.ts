@@ -26,6 +26,7 @@ import { SingleHousePageComponent } from './pages/single-house-page/single-house
 import { RegisterComponent } from './pages/register/register.component';
 import { ShowFirstComponent } from './pages/show-first/show-first.component';
 import { ShowSecondComponent } from './pages/show-second/show-second.component';
+import { ImagesComponent } from './pages/images/images.component';
 
 
 
@@ -50,7 +51,8 @@ import { ShowSecondComponent } from './pages/show-second/show-second.component';
     SingleHousePageComponent,
     RegisterComponent,
     ShowFirstComponent,
-    ShowSecondComponent
+    ShowSecondComponent,
+    ImagesComponent
   ],
   imports: [
     BrowserModule,
