@@ -27,6 +27,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ShowFirstComponent } from './pages/show-first/show-first.component';
 import { ShowSecondComponent } from './pages/show-second/show-second.component';
 import { ImagesComponent } from './pages/images/images.component';
+import { CheckImagesComponent } from './pages/check-images/check-images.component';
 
 
 
@@ -52,7 +53,8 @@ import { ImagesComponent } from './pages/images/images.component';
     RegisterComponent,
     ShowFirstComponent,
     ShowSecondComponent,
-    ImagesComponent
+    ImagesComponent,
+    CheckImagesComponent
   ],
   imports: [
     BrowserModule,

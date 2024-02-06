@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { HouseService } from 'src/app/services/house.service';
 import { UserAuthService } from 'src/app/services/user-auth.service';
 
@@ -10,6 +11,7 @@ import { UserAuthService } from 'src/app/services/user-auth.service';
 export class AvailableHousesComponent implements OnInit{
   houses: any = [];
   availableHouses: any = [];
+  isModalOpen:any;
   constructor(
     private houseService:HouseService,
     private userAuthService: UserAuthService
@@ -30,5 +32,30 @@ export class AvailableHousesComponent implements OnInit{
         console.log(error);
       }
     )
+  }
+
+  filterHouses(form:NgForm){
+    const formValues: { [key: string]: any } = {};
+
+  // Iterate through form controls
+    Object.keys(form.controls).forEach(key => {
+    const control = form.controls[key];
+
+    // Check if the control has been touched or its value is not empty
+    if ((control.dirty || control.touched) && control.value !== '') {
+      formValues[key] = control.value;
+    }
+  });
+    this.isModalOpen=false;
+
+    
+  }
+
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
   }
 }

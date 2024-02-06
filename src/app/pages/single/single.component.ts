@@ -31,7 +31,6 @@ export class SingleComponent implements OnInit{
     this.userId = this.userAuthService.getUserId();
     this.getSingleHouse();
     this.getOffersByHouseId();
-    this.getImagesByHouseId();
   }
 
   getImagesByHouseId(){

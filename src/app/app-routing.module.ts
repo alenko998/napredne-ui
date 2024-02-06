@@ -19,6 +19,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ShowFirstComponent } from './pages/show-first/show-first.component';
 import { ShowSecondComponent } from './pages/show-second/show-second.component';
 import { ImagesComponent } from './pages/images/images.component';
+import { CheckImagesComponent } from './pages/check-images/check-images.component';
 
 const routes: Routes = [
   {path: 'home' , component: HomeComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'my-house/:id' , component: MyHouseComponent},
   {path: 'single' , component: SingleComponent,canActivate:[AuthGuard],data:{roles:'User'}},
   {path: 'images/:id' , component: ImagesComponent,canActivate:[AuthGuard],data:{roles:'User'}},
+  {path: 'check-images/:id' , component: CheckImagesComponent,canActivate:[AuthGuard],data:{roles:'User'}},
   {path: 'user-offers/:houseId' , component: UserOffersComponent,canActivate:[AuthGuard],data:{roles:'User'}},
   {path: 'admin' , component: AdminComponent,canActivate:[AuthGuard],data:{roles:'Admin'}},
   {path: 'users' , component: UsersComponent,canActivate:[AuthGuard],data:{roles:'Admin'}},
