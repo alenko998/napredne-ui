@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { HouseService } from 'src/app/services/house.service';
 import { UserAuthService } from 'src/app/services/user-auth.service';
 
@@ -12,9 +13,11 @@ export class AvailableHousesComponent implements OnInit{
   houses: any = [];
   availableHouses: any = [];
   isModalOpen:any;
+  isFiltered: boolean = false;
   constructor(
     private houseService:HouseService,
-    private userAuthService: UserAuthService
+    private userAuthService: UserAuthService,
+    private router: Router
   ){}
   ngOnInit(): void {
     this.getAllHouses();
@@ -48,9 +51,22 @@ export class AvailableHousesComponent implements OnInit{
   });
     this.isModalOpen=false;
 
-    
+    this.houseService.getFilteredHouses(formValues).subscribe(
+      (response)=>{
+        this.availableHouses = response;
+        console.log(response);
+        this.isFiltered = true;
+      },
+      (error)=>{
+        console.log(error);
+        
+      }
+    )
   }
 
+  resetPage(){
+    window.location.reload();
+  }
   openModal() {
     this.isModalOpen = true;
   }

@@ -62,6 +62,10 @@ export class HouseService {
       })
     }
 
+    getFilteredHouses(filterDto:any){
+      return this.httpClient.post(this.URL + `House/filtered-houses` , filterDto)
+    }
+
 
     private createAuthorizationHeader(): HttpHeaders{
       return new HttpHeaders().set(
