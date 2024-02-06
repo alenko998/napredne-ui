@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HouseService } from 'src/app/services/house.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { UserAuthService } from 'src/app/services/user-auth.service';
@@ -25,7 +25,8 @@ export class MyHouseComponent implements OnInit{
     private houseService:HouseService,
     private route : ActivatedRoute,
     private userService: UserAuthService,
-    private offerService: OfferService
+    private offerService: OfferService,
+    private router: Router
   ){}
   ngOnInit(): void {
     
@@ -50,7 +51,7 @@ export class MyHouseComponent implements OnInit{
     this.offerService.addOffer(this.object).subscribe(
       (response)=>{
         console.log(response);
-        
+        this.router.navigate(['/home'])
       },
       (error) => {
         console.log(error);

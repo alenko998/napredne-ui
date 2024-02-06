@@ -29,9 +29,12 @@
         </p>
       </div>
     </div>
-    <button (click)="deleteHouse(myHouse.id)" class="btn btn-danger ml-72 mb-4">Delete</button>
-    <button [routerLink]="['/user-offers', myHouse.id]"  class="btn btn-primary ml-72 mb-4">Offers</button>
-    <button [routerLink]="['/images', myHouse.id]"  class="btn btn-primary ml-72 mb-4">Images</button>
+    <div class="flex justify-evenly mb-4">
+      <button (click)="deleteHouse(myHouse.id)" class="btn btn-danger">Delete</button>
+      <button [routerLink]="['/user-offers', myHouse.id]"  class="btn btn-success">Offers</button>
+      <button [routerLink]="['/images', myHouse.id]"  class="btn btn-primary ">Images</button>
+    </div>
+    
   </div>
 
 

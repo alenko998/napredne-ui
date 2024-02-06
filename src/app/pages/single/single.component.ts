@@ -59,9 +59,11 @@ export class SingleComponent implements OnInit{
     this.houseService.addHouse(formData).subscribe(
       (response)=>{
        console.log(response);
+       this.router.navigate(['/home'])
       },
       (error)=>{
         console.log(error); 
+        this.router.navigate(['/home'])
       }
     )    
   }
