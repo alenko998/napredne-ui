@@ -41,7 +41,7 @@ export class ImagesComponent implements OnInit{
 
   onUpload(houseId:any) {
     if (this.selectedFile) {
-      this.imageService.uploadImage(this.selectedFile).subscribe(
+      this.imageService.uploadImage(this.selectedFile,this.houseId).subscribe(
         (response) => {
           console.log(response);
           this.router.navigate(['/home']);

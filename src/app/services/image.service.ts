@@ -16,10 +16,10 @@ export class ImageService {
 
   
     
-    uploadImage(file: File) {
+    uploadImage(file: File,houseId:any) {
       const formData: FormData = new FormData();
       formData.append('file', file, file.name);
-      return this.httpClient.post(this.URL + 'Image', formData);
+      return this.httpClient.post(this.URL + `Image/${houseId}`, formData);
     }
 
     getImageByHouseId(id:any){
