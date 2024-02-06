@@ -22,6 +22,7 @@ export class UsersComponent implements OnInit{
       (response)=>{
         this.users = response;
         this.filteredUsers = this.users.filter((user: { role: string; }) => user.role === 'User');
+        
         console.log(this.users);
         console.log(this.filteredUsers);
       },
